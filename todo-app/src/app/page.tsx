@@ -5,7 +5,7 @@ import TodoList from '../components/TodoList';
 const Home = () => {
     return (
         <div className="container mx-auto p-8 text-center max-w-2xl">
-            <h1 className="text-2xl mb-4">Todo App</h1>
+            <h1 className="text-2xl mb-4">Todo Appああああ</h1>
             <TodoList />
         </div>
     );
