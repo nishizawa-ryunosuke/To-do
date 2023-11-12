@@ -46,7 +46,7 @@ const TodoList = () => {
             <div>
                 {tasks.map((task, index) => (
                     <TodoItem
-                        //key={index} // ←注意ポイント③
+                        key={index} // ←注意ポイント③
                         task={task.task}
                         // removeTask関数をTodoItemに渡す
                         toggleCompletion={() => removeTask(index)}
