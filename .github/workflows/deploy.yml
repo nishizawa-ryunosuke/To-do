@@ -24,10 +24,10 @@ jobs:
           cd /home/runner/work/To-do/To-do/todo-app/
           npm install
 
-      - name: Build And Export
+      - name: Build
         run: |
           cd /home/runner/work/To-do/To-do/todo-app/
-          npm run export
+          npm run build
 
       - name: Deploy to EC2
         env:
