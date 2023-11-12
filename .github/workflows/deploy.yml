@@ -24,10 +24,10 @@ jobs:
           cd /home/runner/work/To-do/To-do/todo-app/
           npm install
 
-      - name: Build Project
+      - name: Build And Export
         run: |
           cd /home/runner/work/To-do/To-do/todo-app/
-          npm run build
+          npm run export
 
       - name: Deploy to EC2
         env:
@@ -39,6 +39,6 @@ jobs:
           ls
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
-          scp -o StrictHostKeyChecking=no -i private_key -r .next/* $USER@$HOST:/var/www/html/To-do/To-do/todo-app
+          scp -o StrictHostKeyChecking=no -i private_key -r ./out $USER@$HOST:/var/www/html/To-do/To-do/todo-app
           ssh -o StrictHostKeyChecking=no -i private_key $USER@$HOST 'cd /var/www/html/To-do/To-do && git fetch git@github.com:nishizawa-ryunosuke/To-do.git && git pull git@github.com:nishizawa-ryunosuke/To-do.git'
           rm -f private_key
