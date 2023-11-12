@@ -37,5 +37,6 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
+          scp -o StrictHostKeyChecking=no -i private_key -r .next/* $USER@$HOST:/var/www/html/To-do/To-do
           ssh -o StrictHostKeyChecking=no -i private_key $USER@$HOST 'cd /var/www/html/To-do/To-do && git fetch git@github.com:nishizawa-ryunosuke/To-do.git && git pull git@github.com:nishizawa-ryunosuke/To-do.git'
           rm -f private_key
