@@ -36,6 +36,7 @@ jobs:
           USER: ${{ secrets.EC2_USER }}
         run: |
           cd /home/runner/work/To-do/To-do/todo-app/
+          ls
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
           scp -o StrictHostKeyChecking=no -i private_key -r .next/* $USER@$HOST:/var/www/html/To-do/To-do/todo-app
