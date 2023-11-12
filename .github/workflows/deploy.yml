@@ -18,7 +18,10 @@ jobs:
           node-version: '16'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          ls
+          pwd
+          npm install
 
       - name: Build Project
         run: npm run build
