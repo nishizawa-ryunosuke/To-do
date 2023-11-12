@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 'node' # これで常に最新のリリースバージョンが使われる
+          node-version: '16'
 
       - name: Install Dependencies
         run: npm install
